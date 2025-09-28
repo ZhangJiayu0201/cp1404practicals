@@ -3,10 +3,10 @@ MINIMUM_LENGTH = 5
 
 def main():
     password = get_password()
-    method_name(password)
+    display(password)
 
 
-def method_name(password):
+def display(password):
     print("*" * len(password))
 
 
