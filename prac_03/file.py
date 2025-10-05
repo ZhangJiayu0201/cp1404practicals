@@ -25,4 +25,3 @@ with open("number.txt", "r") as file:
     for line in file:
         total += int(line)
 print(total)
-
