@@ -33,12 +33,12 @@
 # print(list(s.strip()))
 
 
-name_list = ["Asda", "Basd", "Casd", "Dasd"]
-# write code that creates files from a list of strings.
-# Each file named with the value of the string. Write the string to the file.
-for i in range(len(name_list)):
-    with open(f"{name_list[i]}.txt", "w") as out_file:
-        print(f"{i+1} {name_list[i]}", file=out_file)
+# name_list = ["Asda", "Basd", "Casd", "Dasd"]
+# # write code that creates files from a list of strings.
+# # Each file named with the value of the string. Write the string to the file.
+# for i in range(len(name_list)):
+#     with open(f"{name_list[i]}.txt", "w") as out_file:
+#         print(f"{i+1} {name_list[i]}", file=out_file)
 
 # for name in name_list:
 #     filename = name + ".txt"
@@ -48,3 +48,24 @@ for i in range(len(name_list)):
 # with open("A.txt", "r") as in_file:
 #     lines = in_file.readlines()
 # print(lines)
+
+# # 移除名字直到输入空格
+# names = ["Ada", "Alan", "Bill", "John"]
+# print(",".join(names))
+# name_to_remove = input("Who do you want to remove? ").title()  # .title=视为标题，首字母大写
+# while name_to_remove != "":
+#     try:
+#         names.remove(name_to_remove)
+#     except ValueError:
+#         print("Not in list!")
+#     print(",".join(names))
+#     name_to_remove = input("Who do you want to remove? ").title()
+# print("Good bay!")
+
+# data = [['derek', 7], ['xavier', 80], ['bob', 612], ['chantanelle', 9]]
+
+
+# Output: [('name', 'Bob'), ('age', 99), ('day', 'Wed'), ('height', 1.75)]
+
+
+print("*".join([len(word) for word in "one*two*three".split('*')]))
