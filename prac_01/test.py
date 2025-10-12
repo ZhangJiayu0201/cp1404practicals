@@ -68,4 +68,3 @@
 # Output: [('name', 'Bob'), ('age', 99), ('day', 'Wed'), ('height', 1.75)]
 
 
-print("*".join([len(word) for word in "one*two*three".split('*')]))
