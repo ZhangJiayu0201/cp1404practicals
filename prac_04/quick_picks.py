@@ -14,4 +14,3 @@ for i in range(pick_times):
             numbers.append(number)
 
     print(" ".join(f"{num:2}" for num in sorted(numbers)))
-
