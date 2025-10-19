@@ -19,6 +19,7 @@ def main():
 
 
 def read_lines(filename):
+    """Read lines from filename and change the type"""
     lines = []
     with open(filename, "r", encoding="utf-8-sig") as in_file:
         in_file.readline()
@@ -30,6 +31,7 @@ def read_lines(filename):
 
 
 def process_rows(lines):
+    """Convert each line into a list, return list."""
     rows = []
     for line in lines:
         words = line.split(",")
@@ -41,6 +43,7 @@ def process_rows(lines):
 
 
 def process_data(rows):
+    """Build dictionary and set according to provided file"""
     number_of_champions = {}
     countries = set()
     for words in rows:
