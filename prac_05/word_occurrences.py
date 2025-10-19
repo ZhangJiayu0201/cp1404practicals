@@ -1,7 +1,7 @@
 """
 Word Occurrences
-Estimate: 20 minutes
-Actual:   28 minutes
+Estimate: 25 minutes
+Actual:   36 minutes
 """
 
 text = input("Text: ")
@@ -12,7 +12,6 @@ for word in words:
         word_to_count[word] += 1
     else:
         word_to_count[word] = 1
-
 keys = sorted(word_to_count.keys())
 width = max(len(k) for k in keys)
 for k in keys:
