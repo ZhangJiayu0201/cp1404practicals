@@ -17,6 +17,5 @@ while state_code != "":
     except KeyError:
         print("Invalid short state")
     state_code = input("Enter short state: ").upper()
-
 for k, name in CODE_TO_NAME.items():
     print(f"{k.upper():3} is {name}")
