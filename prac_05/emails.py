@@ -18,6 +18,5 @@ while email != "":
         real_name = input("Name: ").strip()
     email_to_name[email] = real_name
     email = input("Email: ").strip()
-
 for email, real_name in email_to_name.items():
     print(f"{real_name} ({email})")
