@@ -64,7 +64,14 @@
 
 # data = [['derek', 7], ['xavier', 80], ['bob', 612], ['chantanelle', 9]]
 
-
 # Output: [('name', 'Bob'), ('age', 99), ('day', 'Wed'), ('height', 1.75)]
+from operator import itemgetter
+name_to_number = {"Derek": 7, "Xavier": 80, "Bob": 612, "Chantanelle": 9}
 
+max_name_length = max(len(name) for name in name_to_number)
 
+for name, number in name_to_number.items():
+    print(f"{name:<{max_name_length}} - {number:>3}")
+
+for name, number in sorted(name_to_number.items(), key=itemgetter(1), reverse=True):
+    print(f"{name:<{max_name_length}} - {number:>3}")
