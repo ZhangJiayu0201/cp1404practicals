@@ -6,14 +6,14 @@ Actual:   23 minutes
 
 text = input("Text: ")
 words = text.split(" ")
-counts = {}
+word_to_count = {}
 for word in words:
-    if word in counts:
-        counts[word] += 1
+    if word in word_to_count:
+        word_to_count[word] += 1
     else:
-        counts[word] = 1
+        word_to_count[word] = 1
 
-keys = sorted(counts.keys())
+keys = sorted(word_to_count.keys())
 width = max(len(k) for k in keys)
 for k in keys:
-    print(f"{k:{width}} : {counts[k]}")
+    print(f"{k:{width}} : {word_to_count[k]}")
