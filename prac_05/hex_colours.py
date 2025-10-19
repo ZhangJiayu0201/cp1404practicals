@@ -10,6 +10,5 @@ while name != "":
     except KeyError:
         print("Invalid colour name")
     state_code = input("Enter colour name: ").lower()
-
 for k, name in CODE_TO_COLOURS.items():
     print(f"{k.title():16} is {name}")
