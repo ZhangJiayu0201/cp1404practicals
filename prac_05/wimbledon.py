@@ -1,7 +1,7 @@
 """
 Wimbledon_simple_funcs.py
 Time estimate: 60 minutes
-Actual time: 76 minutes
+Actual time: 71 minutes
 """
 
 
