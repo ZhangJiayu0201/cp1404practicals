@@ -65,13 +65,52 @@
 # data = [['derek', 7], ['xavier', 80], ['bob', 612], ['chantanelle', 9]]
 
 # Output: [('name', 'Bob'), ('age', 99), ('day', 'Wed'), ('height', 1.75)]
-from operator import itemgetter
-name_to_number = {"Derek": 7, "Xavier": 80, "Bob": 612, "Chantanelle": 9}
+# from operator import itemgetter
+# name_to_number = {"Derek": 7, "Xavier": 80, "Bob": 612, "Chantanelle": 9}
+#
+# max_name_length = max(len(name) for name in name_to_number)
+#
+# for name, number in name_to_number.items():
+#     print(f"{name:<{max_name_length}} - {number:>3}")
+#
+# for name, number in sorted(name_to_number.items(), key=itemgetter(1), reverse=True):
+#     print(f"{name:<{max_name_length}} - {number:>3}")
 
-max_name_length = max(len(name) for name in name_to_number)
+# TEETH_INDEX = 1
+# monsters = [["Mike", 340, "blue"],
+# ["James", 14, "green"],
+# ["Randall", 24, "purple"]]
+# scary_monsters = [monster for monster in monsters if monster[TEETH_INDEX] > 16]
+# print(scary_monsters)
 
-for name, number in name_to_number.items():
-    print(f"{name:<{max_name_length}} - {number:>3}")
+# class Monster:
+#     def __init__(self, name="Mike", number_of_teeth=0, colour="blue"):
+#         self.name = name
+#         self.number_of_teeth = number_of_teeth
+#         self.colour = colour
 
-for name, number in sorted(name_to_number.items(), key=itemgetter(1), reverse=True):
-    print(f"{name:<{max_name_length}} - {number:>3}")
+
+# Define the Monster class (with is_scary method)
+
+class User:
+
+    def __init__(self, name):
+
+        self.name = name
+        self.tacos = 5
+        self.score = 0
+
+    def give_taco(self, other_user):
+
+        if self.tacos > 0:
+            self.tacos -= 1
+            other_user.score += 1
+        else:
+            print(f"{self.name} has no tacos left to give!")
+
+    def __str__(self):
+       
+        return f"{self.name}, {self.score} points, {self.tacos} tacos left"
+
+
+
