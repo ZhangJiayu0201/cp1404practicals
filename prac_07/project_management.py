@@ -31,10 +31,10 @@ def main():
         elif choice == "s":
             filename = input("Filename to save to: ")
             save_projects(filename, projects)
-        # elif choice == "d":
-        #     display_projects(projects)
-        # elif choice == "f":
-        #     filter_projects(projects)
+        elif choice == "d":
+            display_projects(projects)
+        elif choice == "f":
+            filter_projects(projects)
         # elif choice == "a":
         #     add_project(projects)
         # elif choice == "u":
@@ -71,6 +71,35 @@ def save_projects(filename, projects):
             print(
                 f"{project.name}\t{project.start_date.strftime('%d/%m/%Y')}\t{project.priority}\t{project.cost_estimate}\t{project.completion_percentage}", file=out_file)
     print(f"Projects saved to {filename}")
+
+
+def display_projects(projects):
+    """Display incomplete and completed projects sorted by priority."""
+    incomplete = sorted([p for p in projects if not p.is_complete()])
+    complete = sorted([p for p in projects if p.is_complete()])
+
+    print("Incomplete projects: ")
+    for project in incomplete:
+        print(" ", project)
+
+    print("Completed projects: ")
+    for project in complete:
+        print(" ", project)
+
+
+def filter_projects(projects):
+    """Filter projects start after given date and display."""
+    date_string = input("Show projects that start after date (dd/mm/yy): ")
+    filter_date = datetime.datetime.strptime(date_string, "%d/%m/%Y").date()
+
+    project_dicts = [
+        {"project": p, "start_date": p.start_date} for p in projects if p.start_date >= filter_date]
+
+    project_dicts.sort(key=itemgetter("start_date"))
+
+    for item in project_dicts:
+        print(item["project"])
+
 
 if __name__ == "__main__":
     main()
