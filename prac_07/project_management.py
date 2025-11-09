@@ -1,6 +1,6 @@
 """
 myguitars.py
-Estimate time: 120 mins
+Estimate time: 150 mins
 Actual time:   mins
 """
 
@@ -35,10 +35,10 @@ def main():
             display_projects(projects)
         elif choice == "f":
             filter_projects(projects)
-        # elif choice == "a":
-        #     add_project(projects)
-        # elif choice == "u":
-        #     update_project(projects)
+        elif choice == "a":
+            add_project(projects)
+        elif choice == "u":
+            update_project(projects)
 
     save_choice = input("Would you like to save to projects.txt? ")
     if save_choice.lower().startswith("y"):
@@ -99,6 +99,33 @@ def filter_projects(projects):
 
     for item in project_dicts:
         print(item["project"])
+
+
+def add_project(projects):
+    """Add a new project."""
+    print("Let's add a new project")
+    name = input("Name: ")
+    date_string = input("Start date (dd/mm/yy): ")
+    start_date = datetime.datetime.strptime(date_string, "%d/%m/%Y").date()
+    priority = int(input("Priority: "))
+    cost = float(input("Cost estimate: $"))
+    completion = int(input("Percent complete: "))
+    projects.append(Project(name, start_date, priority, cost, completion))
+
+
+def update_project(projects):
+    """Update completion % and priority of a project."""
+    for i, project in enumerate(projects):
+        print(f"{i} {project}")
+    choice = int(input("Project choice: "))
+    project = projects[choice]
+    print(project)
+    new_completion = input("New Percentage: ")
+    if new_completion:
+        project.completion_percentage = int(new_completion)
+    new_priority = input("New Priority: ")
+    if new_priority:
+        project.priority = int(new_priority)
 
 
 if __name__ == "__main__":
