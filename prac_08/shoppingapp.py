@@ -1,5 +1,6 @@
 from kivy.app import App
 
+
 class ShoppingApp(App):
     total = 0
 
