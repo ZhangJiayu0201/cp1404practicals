@@ -12,7 +12,7 @@ class KivyDemo(App):
         """Construct main Kivy app."""
         super().__init__(**kwargs)
         self.counter = 0
-        self.names = ["Lindsay", "Osmond", "Paul"]
+        self.names = ["Lindsay", "Osmond", "Paul", "Paul2"]
 
     def build(self):
         """Construct the dynamic widgets."""
