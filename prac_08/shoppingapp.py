@@ -12,6 +12,5 @@ class ShoppingApp(App):
         self.total = 0
         self.root.ids.total_label.text = "Total: 0"
 
-
 if __name__ == "__main__":
     ShoppingApp().run()
