@@ -1,0 +1,36 @@
+BoxLayout:
+    orientation: 'vertical'
+
+    Label:
+        id: total_label
+        text: "Total: 0"
+
+    BoxLayout:
+        orientation: 'vertical'
+        Button:
+            text: "1 10y"
+            on_press: app.add_to_total(10)
+
+    BoxLayout:
+        orientation: 'horizontal'
+
+        Button:
+            text: "2 5y"
+            on_press: app.add_to_total(5)
+
+    BoxLayout:
+        orientation: 'horizontal'
+
+        Button:
+            text: "3 8y"
+            on_press: app.add_to_total(8)
+
+    BoxLayout:
+        orientation: 'horizontal'
+
+        Button:
+            text: "BUY"
+
+        Button:
+            text: "reset"
+            on_press: app.clear_total()
