@@ -4,7 +4,7 @@ Guitar class
 """
 # Note: It would be better to get the current year from the system clock
 # and you might like to do that: lookup the "datetime" module
-CURRENT_YEAR = 2022
+CURRENT_YEAR = 2025
 VINTAGE_AGE = 50
 
 

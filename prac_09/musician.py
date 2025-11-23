@@ -1,38 +1,42 @@
-"""
-CP1404/CP5632 Practical - Suggested Solution
-Guitar class
-"""
-# Note: It would be better to get the current year from the system clock
-# and you might like to do that: lookup the "datetime" module
-CURRENT_YEAR = 2022
-VINTAGE_AGE = 50
+"""Musician class for CP1404"""
 
 
-class Guitar:
-    """Guitar class for storing details of a guitar."""
+class Musician:
+    """Musician class"""
 
-    def __init__(self, name="", year=0, cost=0):
-        """Initialise a Guitar."""
+    def __init__(self, name=""):
+        """Construct a Musician with a name and empty instrument collection."""
         self.name = name
-        self.year = year
-        self.cost = cost
+        self.instruments = []
 
     def __str__(self):
-        """Return a string representation of a Guitar."""
-        return f"{self.name} ({self.year}) : ${self.cost:,.2f}"
+        """Return a string representation of a Musician."""
+        return f"{self.name} ({self.instruments})"
 
     def __repr__(self):
-        """Return a string representation of a Guitar."""
-        return str(self)
+        """Return a string representation of a Musician, showing the variables."""
+        return str(vars(self))
 
-    def get_age(self):
-        """Get the age of a guitar based on the CURRENT_YEAR."""
-        return CURRENT_YEAR - self.year
+    def add(self, instrument):
+        """Add an instrument to musician's collection."""
+        self.instruments.append(instrument)
 
-    def is_vintage(self):
-        """Determine if a Guitar is considered vintage or not based on age."""
-        return self.get_age() >= VINTAGE_AGE
+    def play(self):
+        """Return a string showing the instrument playing their first (or no) instrument."""
+        if not self.instruments:
+            return f"{self.name} needs an instrument!"
+        return f"{self.name} is playing: {self.instruments[0]}"
 
-    def __lt__(self, other):
-        """Less than, used for sorting Guitars - by year released."""
-        return self.year < other.year
+
+if __name__ == '__main__':
+    from guitar import Guitar
+
+    musician = Musician()
+    assert musician.name == ""
+    assert musician.instruments == []
+
+    musician.name = "Lincoln Brewster"
+    musician.instruments.append(Guitar("Fender Lincoln Brewster Stratocaster", 2020, 3419.0))
+    musician.instruments.append(Guitar("Ernie Ball Music Man Silhouette Special", 1993, 2499.0))
+    print(musician)
+    print(musician.play())
